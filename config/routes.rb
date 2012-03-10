@@ -1,4 +1,17 @@
 TheChildrensJourney::Application.routes.draw do
+  
+  root :to => 'pages#home', :as => 'home'
+
+  get 'about' => "pages#about"
+
+  get 'enrollment' => "pages#enrollment"
+
+  get 'location' => "pages#location"
+
+  get 'handbook' => "pages#handbook"
+
+  get 'contact' => "pages#contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
