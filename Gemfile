@@ -4,6 +4,8 @@ gem 'rails', '3.1.1'
 gem 'thin'
 gem 'heroku'
 gem 'json'
+gem 'bourbon'
+gem 'jquery-rails'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
