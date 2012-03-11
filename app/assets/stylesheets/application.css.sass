@@ -4,29 +4,61 @@
 @import nav
 @import url(http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic)
 
+//Mixins
+@mixin clearAfter
+  &:after
+    content: "\0020"
+    display: block
+    height: 0
+    clear: both
+    overflow: hidden
+    visibility: hidden
 
+//Variables
+$headerSize: 1.3em
+$anchorColor: #692148
+  
 body
   background: url(/images/body_bg_pattern.jpg) repeat 0 0 #f3f9e8
   font-family: 'Puritan', sans-serif
-  font-size: 1em
-  line-height: 1.3em
+  font-size: 1.1em
+  line-height: 1.5em
   color: #3a3c37
 
+h1, h2, h3, h4, h5, h6,
+  font-weight: bold
+  
+h1
+  font-size: $headerSize
+h2
+  font-size: $headerSize - .1
+h3
+  font-size: $headerSize - .2
+h4
+  font-size: $headerSize - .3
 a
   text-decoration: none
+  color: $anchorColor
+  word-wrap: break-word
+  &:hover, &:active
+    color: darken($anchorColor, 10%)
 
+img
+  max-width: 100%
+  
 .header
   background:  url(/images/mobi_header_bg.jpg) no-repeat 0 0 #a3ba79
-  background-size: 100%
+  background-size: 100% 66px
   min-height: 53px
   h1
     text-align: center
+    font-size: 1.3em
+    line-height: .9em
   a
     background: url(/images/logo.png) no-repeat 5% 50% transparent
     +background-size(auto 29px)
     display: block
     color: #fff
-    font-size: 1.3em
     padding: 23px
     .logoImg
       height: 29px
@@ -35,7 +67,58 @@ a
       padding: 19px
     
 .navContainer
-  margin-top: -72px
+  margin-top: -74px
+.mainImage
+  padding-bottom: 20px
+  background-color: #f1eac3
+  +clearAfter
+  img
+    width: 100%
+.imageMessage
+  background-color: rgba(0, 0, 0, 0.5)
+  +border-radius(5px)
+  width: 90%
+  float: right
+  margin-top: -90px
+  margin-right: 2%
+  position: relative
+  p
+    padding: 5px
+    color: #f1eac3
+    text-shadow: 1px 1px 1px #060607
+    font-size: .9em
+    line-height: 1.3em
+  
+.sectionDivider
+  height: 20px
+  +linear-gradient(#8b5372 0%, #6b244a 10%, #6b244a 70%, #4b1833 80%, #381227 90%, #381227 100%)
+  
+.sectionContent
+  margin: 10px auto
+  padding: 15px 3%
+  width: 90%
+  background: #ecf1e3
+  +border-radius(5px)
+  +box-shadow(0 0 1px 0 #d4d9cc inset)
+  &.mainHeader
+    margin-top: -35px
+
+//FEED
+.feed
+  ul
+    li
+      @extend .sectionContent 
+      .headline
+        font-weight: bold
+        display: block
+        line-height: 1em
+      .date
+        font-size: .9em
+        line-height: 1em
+        margin-bottom: .8em
+
+#creditfooter
+  display:  none
   
   
   
