@@ -4,7 +4,7 @@
 [role='navigation']
   margin: 0 auto
   width: 100%
-  background-color: #333
+  background: #9eb572
 
 .js [role='navigation']
   display: none
@@ -13,10 +13,12 @@
   display: block
   padding: 1em
   color: #fff
-  background-image: url('/images/menu_btn.png')
+  background-image: url('/images/menu_btn_sprite.png')
   background-repeat: no-repeat
-  background-position: 93% 18px
   height: 40px
+  background-position: 93% -63px
+.expanded
+  background-position: 93% 25px
 
 [role='navigation']
   &:after
@@ -32,13 +34,16 @@
     list-style: none
     +inline-block
     background-color: #333
-    width: 33%
+    width: 33.3333%
     text-align: center
+    background: url(/images/nav_bg_sprite.jpg) repeat bottom left #9eb572
+    +box-shadow(0 0 0 1px #8da266 inset)
+    &.current, &:hover, &:active
+      background-position: top left
     a
-      margin-right: 20%
       display: block
-      color: #ddd
-      border-bottom: 1px solid #111
+      color: #fff
+      padding: 15px 0
   li ul
     width: 100%
     li

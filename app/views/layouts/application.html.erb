@@ -43,7 +43,8 @@
   			}
           }
       });
-   })	
+   });	
+   
   </script>
 </head>
 <body>
@@ -62,7 +63,7 @@
   </header>
   <nav>
     <div class="navContainer">
-      <div class='menu-button'></div>	
+      <div class='menu-button off'></div>	
       <ul id="nav" role="navigation">
         <%= link_to_with_current_class "Home", home_path %><%= link_to_with_current_class "About", about_path %><%= link_to_with_current_class "Enrollment", enrollment_path %><%= link_to_with_current_class "Location", location_path %><%= link_to_with_current_class "Handbook", handbook_path %><%= link_to_with_current_class "Contact", contact_path %>
       </ul>
