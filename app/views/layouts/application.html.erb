@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TheChildrensJourney</title>
+  <title>The Children's Journey | Day Care</title>
+  <meta name="description" content="The Children’s Journey is a ministry of the Journey Fellowship. We are a non-profit, non-discriminatory, service organization.">
+  <meta property="og:url" content="http://www.thechildrensjourney.org" />
+  <meta property="og:type" content="website" />
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript">
+
+  
   // global variables 
   var compareWidth, //previous width used for comparison
   	detector, //the element used to compare changes
@@ -24,6 +29,7 @@
   	}
   	// Toggle for nav menu
   	$('.js .menu-button').click(function() {
+  	  $(this).toggleClass('expanded');
   		$('[role="navigation"]').slideToggle('fast', function() {});			
   	});	
   	// Credit: http://webdeveloper2.com/2011/06/trigger-javascript-on-css3-media-query-change/
@@ -43,7 +49,7 @@
   			}
           }
       });
-   });	
+   });
   </script>
 </head>
 <body>
@@ -62,7 +68,7 @@
   </header>
   <nav>
     <div class="navContainer">
-      <div class='menu-button off'></div>	
+      <div class='menu-button'></div>	
       <ul id="nav" role="navigation">
         <%= link_to_with_current_class "Home", home_path %><%= link_to_with_current_class "About", about_path %><%= link_to_with_current_class "Enrollment", enrollment_path %><%= link_to_with_current_class "Location", location_path %><%= link_to_with_current_class "Handbook", handbook_path %><%= link_to_with_current_class "Contact", contact_path %>
       </ul>
