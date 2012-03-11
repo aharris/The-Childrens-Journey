@@ -1,2 +1,41 @@
 @import bourbon
 @import pages
+@import reset
+@import nav
+@import url(http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic)
+
+
+body
+  background: url(/images/body_bg_pattern.jpg) repeat 0 0 #f3f9e8
+  font-family: 'Puritan', sans-serif
+  font-size: 1em
+  line-height: 1.3em
+  color: #3a3c37
+
+a
+  text-decoration: none
+
+.header
+  background:  url(/images/mobi_header_bg.jpg) no-repeat 0 0 #a3ba79
+  background-size: 100%
+  min-height: 53px
+  h1
+    text-align: center
+  a
+    background: url(/images/logo.png) no-repeat 5% 50% transparent
+    +background-size(auto 29px)
+    display: block
+    color: #fff
+    font-size: 1.3em
+    padding: 23px
+    .logoImg
+      height: 29px
+      width: auto
+      vertical-align: middle
+      padding: 19px
+    
+.navContainer
+  margin-top: -70px
+  
+  
+  

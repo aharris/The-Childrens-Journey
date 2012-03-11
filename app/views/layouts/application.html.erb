@@ -5,8 +5,69 @@
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  // global variables 
+  var compareWidth, //previous width used for comparison
+  	detector, //the element used to compare changes
+  	smallScreen; // Size of maximum width of single column media query
+  jQuery(document).ready(function(){
+      //set the initial values
+      detector = jQuery('.js');
+      compareWidth = detector.width();
+  	smallScreen = '820'; 
+  	if ($(window).width() < smallScreen) {
+  		$("body").addClass("one-column");		
+  	}
+  	else {
+  		$("body").addClass("two-column");	
+  	}
+  	// Toggle for nav menu
+  	$('.js .menu-button').click(function() {
+  		$('[role="navigation"]').slideToggle('fast', function() {});			
+  	});	
+  	// Credit: http://webdeveloper2.com/2011/06/trigger-javascript-on-css3-media-query-change/
+      jQuery(window).resize(function(){
+          //compare everytime the window resize event fires
+          if(detector.width()!=compareWidth){
+              //a change has occurred so update the comparison variable
+              compareWidth = detector.width();
+  			if (compareWidth < smallScreen) {
+  				$("body").removeClass("two-column").addClass("one-column");				
+  			}
+  			else {
+  				$("body").removeClass("one-column").addClass("two-column");	
+  			}
+  			if (compareWidth >= smallScreen) {
+  				$('[role="navigation"]').show();
+  			}
+          }
+      });
+   })	
+  </script>
 </head>
 <body>
+  <header>
+    <div class="header">
+      <div class="container">
+        <div class="logo">
+          <h1>
+            <a href="/">
+            The Children's Journey
+            </a>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </header>
+  <nav>
+    <div class="navContainer">
+      <div class='menu-button'></div>	
+      <ul id="nav" role="navigation">
+        <%= link_to_with_current_class "Home", home_path %><%= link_to_with_current_class "About", about_path %><%= link_to_with_current_class "Enrollment", enrollment_path %><%= link_to_with_current_class "Location", location_path %><%= link_to_with_current_class "Handbook", handbook_path %><%= link_to_with_current_class "Contact", contact_path %>
+      </ul>
+    </nav>
+  </div>
 
 <%= yield %>
 

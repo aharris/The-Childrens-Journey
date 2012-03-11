@@ -1,0 +1,104 @@
+[role='main']
+  margin: 5% auto
+
+[role='navigation']
+  margin: 0 auto
+  width: 100%
+  background-color: #333
+
+.js [role='navigation']
+  display: none
+
+.menu-button
+  display: block
+  padding: 1em
+  color: #fff
+  background-image: url('/images/menu_btn.png')
+  background-repeat: no-repeat
+  background-position: 93% 18px
+  height: 40px
+
+[role='navigation']
+  &:after
+    /* clearfix
+    visibility: hidden
+    display: block
+    font-size: 0
+    content: " "
+    clear: both
+    height: 0
+  li
+    position: relative
+    list-style: none
+    +inline-block
+    background-color: #333
+    width: 33%
+    text-align: center
+    a
+      margin-right: 20%
+      display: block
+      color: #ddd
+      border-bottom: 1px solid #111
+  li ul
+    width: 100%
+    li
+      float: none
+      width: 100%
+      a
+        display: block
+        background-color: #333
+    position: relative
+    border-top: 1px solid #333
+    border-bottom: 1px solid #333
+
+@media all and (min-width: 800px)
+  p
+    font-size: 100%
+    margin-bottom: 1.5em
+    line-height: 1.25em
+  .js [role='navigation']
+    display: block
+  .menu-button
+    display: none
+  [role='navigation'] li
+    position: relative
+    list-style: none
+    float: left
+    display: block
+    background-color: #333
+    width: 20%
+  .no-touch .item-with-ul:hover > ul
+    opacity: 1
+    top: 3.1em
+    position: absolute
+  [role='navigation'] li a
+    border-left: 1px solid #000
+    border-bottom: none
+  .no-touch [role='navigation'] li ul
+    position: absolute
+    top: auto
+    left: 0
+    opacity: 0
+    visibility: hidden
+    height: 1px
+    z-index: 1
+    -webkit-transition: .4s all ease
+    -moz-transition: .4s all ease
+    -o-transition: .4s all ease
+    -ms-transition: .4s all ease
+    transition: .4s all ease
+  [role='navigation'] li ul li a
+    border-bottom: none
+  .touch [role='navigation'] li ul.sub-menu
+    position: absolute
+    top: auto
+    left: 0
+    display: none
+    z-index: 1
+  .no-touch .item-with-ul:hover > ul
+    visibility: visible
+    opacity: 1
+    height: auto
+    display: block
+    border-right: 1px solid #000
+    border-bottom: 1px solid #000
