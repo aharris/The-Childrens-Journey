@@ -15,8 +15,11 @@
     visibility: hidden
 
 //Variables
-$headerSize: 1.3em
+$headerSize: 1.15em
 $anchorColor: #692148
+
+@media only screen and (min-width: 767px)
+  $headerSize: 1.5em
   
 body
   background: url(/images/body_bg_pattern.jpg) repeat 0 0 #f3f9e8
@@ -31,11 +34,15 @@ h1, h2, h3, h4, h5, h6,
 h1
   font-size: $headerSize
 h2
-  font-size: $headerSize - .1
+  font-size: $headerSize - .05
+  @media only screen and (min-width: 767px)
+    font-size: $headerSize - .2
 h3
-  font-size: $headerSize - .2
-h4
   font-size: $headerSize - .3
+  @media only screen and (min-width: 767px)
+h4
+  font-size: $headerSize - .4
+  @media only screen and (min-width: 767px)
 
 strong 
   font-weight: bold
@@ -53,32 +60,72 @@ a
 img
   max-width: 100%
   
+.container
+  max-width: 1000px
+  margin: 0 auto
+  
 .header
-  background:  url(/images/mobi_header_bg.jpg) no-repeat 0 0 #a3ba79
-  background-size: 100% 66px
-  min-height: 53px
+  position: relative
+  height: 100%
+  @media only screen and (max-width: 767px)
+    .logoContainer
+      background:  url(/images/mobi_header_bg.jpg) no-repeat 0 0
+      background-size: 100% 66px
+  @media only screen and (min-width: 768px)
+    .container
+      margin: -66px auto 0
+    .navBar
+      background:  url(/images/header_bg_pattern.jpg) repeat 0 0 #a3ba79
+      height: 66px
+      +box-shadow(1px 1px 1px #000)
+    h1
+      width: 200px
+      background:  url(/images/logo_bg_pattern_pc.png) no-repeat 0 0
+      height: 170px
+      margin-left: 5%
+    .logo
+      width: 30%
   h1
     text-align: center
-    font-size: 1.3em
+    font-size: 1em
     line-height: .9em
-  a
-    background: url(/images/logo.png) no-repeat 5% 50% transparent
-    +background-size(auto 29px)
-    display: block
-    color: #fff
-    padding: 23px
-    .logoImg
-      height: 29px
-      width: auto
-      vertical-align: middle
-      padding: 19px
+    a
+      background: url(/images/logo.png) no-repeat 3% 50% transparent
+      +background-size(auto 29px)
+      display: block
+      color: #fff
+      padding: 25px 0
+      @media only screen and (min-width: 768px)
+        padding: 100px 0 25px
+        background-position: 50% 20%
+        background-size: auto auto
+      .logoImg
+        height: 29px
+        width: auto
+        vertical-align: middle
+        padding: 19px
     
 .navContainer
   margin-top: -74px
+  @media only screen and (min-width: 768px)
+    margin-top: 0
+    position: relative
+    top: -104px
+    ul
+      width: 69%
+      float: right
+      margin: 0
+      li
+        a
+          padding: 20px 0
 .mainImage
   padding-bottom: 20px
   background-color: #f1eac3
   +clearAfter
+  @media only screen and (min-width: 768px)
+    margin-top: -103px
+    img
+      +border-radius(0 0 5px 5px)
   img
     width: 100%
 .imageMessage
@@ -86,14 +133,14 @@ img
   +border-radius(5px)
   width: 90%
   float: right
-  margin-top: -90px
+  margin-top: -80px
   margin-right: 2%
   position: relative
   p
     padding: 5px
     color: #f1eac3
     text-shadow: 1px 1px 1px #060607
-    font-size: .9em
+    font-size: .8em
     line-height: 1.3em
   
 .sectionDivider
@@ -109,6 +156,36 @@ img
   +box-shadow(0 0 1px 0 #d4d9cc inset)
   &.mainHeader
     margin-top: -35px
+
+@media only screen and (min-width: 768px)
+  .allContent
+    +border-radius(5px)
+    +box-shadow(0 0 1px 0 #d4d9cc inset)
+    background: #ecf1e3
+    margin-top: -35px
+    +clearAfter
+  .mainContent
+    width: 70%
+    float: left
+    +border-radius(5px 0 0 5px)
+    +box-shadow(0 0 1px 0 #d4d9cc inset)
+    .sectionContent
+      +box-shadow(none)
+      &.mainHeader
+        margin-top: 0
+  .sidebar
+    &.classroom
+      +border-radius(0 5px 0 0)
+    float: left
+    width: 26%
+    +box-shadow(0 0 1px 0 #d4d9cc inset)
+    padding: 10px 2%
+    h2
+      text-align: center
+      margin-bottom: .5em
+@media only screen and (max-width: 768px)
+  .sidebar
+    display: none
 
 //FEED
 .feed
