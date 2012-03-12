@@ -16,10 +16,8 @@
 
 //Variables
 $headerSize: 1.15em
+$pcHeaderSize: 1.5em
 $anchorColor: #692148
-
-@media only screen and (min-width: 767px)
-  $headerSize: 1.5em
   
 body
   background: url(/images/body_bg_pattern.jpg) repeat 0 0 #f3f9e8
@@ -33,16 +31,20 @@ h1, h2, h3, h4, h5, h6,
   
 h1
   font-size: $headerSize
+  @media only screen and (min-width: 767px)
+    font-size: $pcHeaderSize
 h2
   font-size: $headerSize - .05
   @media only screen and (min-width: 767px)
-    font-size: $headerSize - .2
+    font-size: $pcHeaderSize - .2
 h3
-  font-size: $headerSize - .3
+  font-size: $headerSize - .1
   @media only screen and (min-width: 767px)
+    font-size: $pcHeaderSize - .3
 h4
-  font-size: $headerSize - .4
+  font-size: $headerSize - .15
   @media only screen and (min-width: 767px)
+    font-size: $pcHeaderSize - .4
 
 strong 
   font-weight: bold
@@ -118,12 +120,15 @@ img
       li
         a
           padding: 20px 0
+
+//HEADER IMAGE
 .mainImage
   padding-bottom: 20px
   background-color: #f1eac3
   +clearAfter
   @media only screen and (min-width: 768px)
     margin-top: -103px
+    padding-bottom: 50px
     img
       +border-radius(0 0 5px 5px)
   img
@@ -136,15 +141,23 @@ img
   margin-top: -80px
   margin-right: 2%
   position: relative
+  max-width: 460px
+  @media only screen and (min-width: 768px)
+    margin-top: -95px
+    margin-right: 1%
   p
     padding: 5px
     color: #f1eac3
     text-shadow: 1px 1px 1px #060607
     font-size: .8em
     line-height: 1.3em
-  
+    @media only screen and (min-width: 768px)
+      font-size: 1em
+      margin-bottom: 0
+
+//SECTION DIVIDER 
 .sectionDivider
-  height: 20px
+  height: 26px
   +linear-gradient(#8b5372 0%, #6b244a 10%, #6b244a 70%, #4b1833 80%, #381227 90%, #381227 100%)
   
 .sectionContent
@@ -155,21 +168,23 @@ img
   +border-radius(5px)
   +box-shadow(0 0 1px 0 #d4d9cc inset)
   &.mainHeader
-    margin-top: -35px
+    margin-top: -40px
 
 @media only screen and (min-width: 768px)
   .allContent
     +border-radius(5px)
     +box-shadow(0 0 1px 0 #d4d9cc inset)
     background: #ecf1e3
-    margin-top: -35px
+    margin-top: -60px
     +clearAfter
   .mainContent
-    width: 70%
+    width: 64%
     float: left
+    padding: 10px 2%
     +border-radius(5px 0 0 5px)
-    +box-shadow(0 0 1px 0 #d4d9cc inset)
     .sectionContent
+      width: 100%
+      padding: 10px 0 5px
       +box-shadow(none)
       &.mainHeader
         margin-top: 0
@@ -177,7 +192,7 @@ img
     &.classroom
       +border-radius(0 5px 0 0)
     float: left
-    width: 26%
+    width: 28%
     +box-shadow(0 0 1px 0 #d4d9cc inset)
     padding: 10px 2%
     h2
