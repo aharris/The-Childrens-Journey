@@ -14,6 +14,11 @@
   padding: 1em
   color: #fff
   background-image: url('/images/menu_btn_sprite.png')
+  -webkit-tap-highlight-color: transparent
+  -webkit-user-select: none
+  @media only screen and (-webkit-min-device-pixel-ratio: 2)
+    background-image: url(/images/menu_btn_sprite@2x.png)
+    +background-size(33px auto)
   background-repeat: no-repeat
   height: 40px
   width: 40px

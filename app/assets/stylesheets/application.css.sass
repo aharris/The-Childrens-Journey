@@ -15,7 +15,7 @@
     visibility: hidden
 
 //Variables
-$headerSize: 1.15em
+$headerSize: 1.1em
 $pcHeaderSize: 1.5em
 $anchorColor: #692148
   
@@ -38,11 +38,11 @@ h2
   @media only screen and (min-width: 767px)
     font-size: $pcHeaderSize - .2
 h3
-  font-size: $headerSize - .1
+  font-size: $headerSize - .75
   @media only screen and (min-width: 767px)
     font-size: $pcHeaderSize - .3
 h4
-  font-size: $headerSize - .15
+  font-size: $headerSize - .1
   @media only screen and (min-width: 767px)
     font-size: $pcHeaderSize - .4
 
@@ -205,6 +205,9 @@ img
 //FEED
 .feed
   ul
+    @media only screen and (max-width: 768px)
+      max-width: 98% !important
+      margin: 0 auto
     li
       @extend .sectionContent 
       .headline
