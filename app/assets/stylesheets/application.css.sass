@@ -17,7 +17,7 @@
 //Variables
 $headerSize: 1.1em
 $pcHeaderSize: 1.5em
-$anchorColor: #692148
+$anchorColor: #9c4072
   
 body
   background: url(/images/body_bg_pattern.jpg) repeat 0 0 #f3f9e8
@@ -46,6 +46,14 @@ h4
   @media only screen and (min-width: 767px)
     font-size: $pcHeaderSize - .4
 
+ol
+  list-style: outside decimal
+  margin-left: 2em
+  li
+    margin: 10px 0
+    a
+      display: block
+
 strong 
   font-weight: bold
 
@@ -59,7 +67,10 @@ a
   &:hover, &:active
     color: darken($anchorColor, 10%)
 
-img
+.subText
+  font-size: smaller
+  
+img, iframe
   max-width: 100%
   
 .container
@@ -182,6 +193,7 @@ img
     float: left
     padding: 10px 2%
     +border-radius(5px 0 0 5px)
+    min-height: 400px
     .sectionContent
       width: 100%
       padding: 10px 0 5px
@@ -221,6 +233,17 @@ img
 
 #creditfooter
   display:  none
-  
+
+//Footer
+footer
+  text-align: center
+
+.footerNav
+  margin: 1em
+  li
+    +inline-block
+    margin: 0 1.5em
+    @media only screen and (max-width: 768px)
+      margin: 0 1em
   
   
