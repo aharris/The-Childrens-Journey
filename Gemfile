@@ -6,6 +6,7 @@ gem 'heroku'
 gem 'json'
 gem 'bourbon'
 gem 'jquery-rails'
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.4'
