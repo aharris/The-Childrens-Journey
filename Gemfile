@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.1'
+gem 'rails', '3.2.11'
 gem 'thin'
 gem 'heroku'
 gem 'json'
@@ -9,8 +9,8 @@ gem 'jquery-rails'
 gem 'newrelic_rpm'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.1.4'
-  gem 'coffee-rails', '~> 3.1.1'
+  gem 'sass-rails',   '~> 3.2.4'
+  gem 'coffee-rails', '~> 3.2.2'
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -20,6 +20,6 @@ end
 
 group :development do
   gem 'foreman'
-  gem 'sqlite3', '1.3.4'
+  gem 'sqlite3', '1.3.5'
 end
 
